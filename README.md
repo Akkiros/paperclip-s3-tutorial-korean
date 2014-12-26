@@ -48,7 +48,7 @@ test:
 ```sh
 config.paperclip_defaults = {
   :storage => :s3,
-  :s3_credentials => "#{Rails.root}/config/amazon_s3.yml",
+  :s3_credentials => "#{Rails.root}/config/aws.yml",
   :s3_host_alias => 'YOUR_CLOUDFRONT_URL',
   :s3_host_name => "s3-ap-northeast-1.amazonaws.com",
   :s3_protocol => "",
