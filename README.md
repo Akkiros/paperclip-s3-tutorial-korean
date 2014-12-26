@@ -30,9 +30,9 @@ https://console.aws.amazon.com/iam/home?#security_credential 에서 access key�
 
 ```sh
 development: &default
-  access_key_id: your_access_key
-  secret_access_key: your_secret_access_key
-  region: your_s3_region
+  access_key_id: 'YOUR_ACCESS_KEY'
+  secret_access_key: 'YOUR_SECRET_ACCESS_KEY'
+  region: 'YOUR_BUCKET_REGION'
   
 production:
   <<: *default
@@ -49,16 +49,17 @@ test:
 config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => "#{Rails.root}/config/amazon_s3.yml",
-  :s3_host_alias => "your_cloudfront_url",
+  :s3_host_alias => 'YOUR_CLOUDFRONT_URL',
   :s3_host_name => "s3-ap-northeast-1.amazonaws.com",
   :s3_protocol => "",
   :url => ":s3_alias_url",
-  :bucket => your_buckey_name,
+  :bucket => 'YOUR_BUCKET_NAME',
   :path => ":attachment/:id/:style/:filename"
 }
 ```
 
 만약 아직 CloudFront와 연동을 하지 않았다면 s3_host_alias와 url 부분은 지워도 된다.
+
 path도 원하는 형식으로 수정해서 사용해도 되고, s3_host_name은 본인의 s3 region에 따라 바꿔주면 된다.
 
 
